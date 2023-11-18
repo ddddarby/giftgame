@@ -1,0 +1,414 @@
+<style>
+@font-face {
+    font-family: 'Vulf Mono';
+    src: url('https://github.com/ddddarby/giftgame/vulf-web/VulfMono-Black.woff2') format('woff2'),
+        url('https://github.com/ddddarby/giftgame/vulf-web/VulfMono-Black.  woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html, body {
+width: 100%;
+height: 100%;
+margin: 0px;
+padding: 0px;
+}
+
+body {
+  background:#F1F1F1;
+  font-family:Vulf Mono;
+  font-size: 12px;
+}
+
+/* unvisited link */
+a:link {
+  color: #000;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+  text-decoration: none;
+}
+.game-wrapper {
+  outline: 2px solid blue;
+  margin: 0px auto;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.game-intro {
+  outline: 1px solid orange;
+  position: relative;
+  width: 100%;
+}
+
+.cta-wrapper {
+  display: flex;
+  margin: 0 auto;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+}
+.counter-wrapper {
+  display: flex;
+  margin: 0 auto;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  border: 2px solid black;
+  border-radius: 6px;
+  text-align:center;
+  display: inline-block;
+  padding: 8px 8px;
+  background: #fff;
+}
+
+.start-button {
+  position: relative;
+  display: block;
+  width: 80px;
+  margin: 100px auto;
+  
+}
+.start-button-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  z-index: 3;
+}
+
+
+.card {
+  width: 280px;
+  display: flex;
+  border: 2px solid #000000;
+  margin: 10px auto;
+  padding: 10px;
+  background: #ffffff;
+}
+.product-title {
+  font-size: 14px;
+  margin: 0 auto 4px;
+}
+.product-buy-button {
+  background:#F1F1F1;
+  padding: 2px;
+}
+.product-image {
+  flex: 1;
+  margin: 0 12px 0 0;
+}
+.product-image img {
+  height: auto;
+  width: 90px;
+}
+.product-name {
+    flex: 2;
+}
+.vote {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 8px;
+}
+
+
+.counter-card {
+  background: #fff;
+  border: 2px solid #000;
+  width: fit-content;
+  margin: 0px 8px;
+  text-align: center;
+  padding: 2px;
+}
+
+
+
+.bunny {
+  width: 80px;
+  height: 120px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: url("https://tinypic.host/images/2023/11/15/bunny-sheeta.png");
+  background-size: 241px 120px;
+  animation: bunny 1s steps(3) infinite;
+}
+.gg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 60px;
+  height: 60px;
+  background-image: url("https://tinypic.host/images/2023/11/15/gg-sprite-sheeta8f42e97071b40b4.png");
+  background-repeat: no-repeat;
+  background-size: 180px 60px;
+  animation: gg 1s steps(3) infinite;
+  margin-top: 62px;
+}
+.speech-bubble {
+  background-color: #fff;
+  width: 160px;
+  border-radius: 10px;
+  padding: 10px;
+  margin:0 auto;
+}
+
+.peanut-gallery {
+  width: 300px;
+  height: 150px;
+  margin: 20px auto;
+  display: block;
+  position: relative;
+  bottom: 0;
+}
+
+
+.curtain-wrapper {
+  margin: 0;
+  padding:0;
+  z-index: -1;
+  width: 100%;
+  height: 400px;
+  position: absolute;
+}
+
+.curtain-left,
+.curtain-right {
+  width: 145px;
+  height: 400px;
+  position: absolute;
+  top:0;
+}
+
+
+.curtain-left {
+  background-image: url("https://tinypic.host/images/2023/11/15/curtain-front-left-sheeta.png");
+  background-size: 1192px 400px;
+  background-position: -149px;
+}
+
+.curtain-right {
+  right: 0;
+  background-image: url("https://tinypic.host/images/2023/11/15/curtain-front-right-sheeta.png");
+  background-size: 1190px 400px;
+  background-position: -149px;
+}
+
+.curtain-animate { 
+  animation: rightcurtain 1.2s steps(7) forwards;
+}
+
+.back-animate {
+  animation: movetoback 3s forwards;
+}
+
+.continue-wrapper {
+  text-align: center;  
+}
+
+.results-wrapper {
+  display:none;
+}
+
+@keyframes rightcurtain {
+  From {background-position: -149px;}
+  To {background-position: -1192px;}
+}
+
+@keyframes movetoback {
+  from {z-index: 2; }
+  to {z-index: -1; }
+}
+
+@keyframes gg {
+  from { background-position: 0px; }
+  to { background-position: -180px; }
+}
+
+@keyframes bunny {
+  from { background-position: 0px; }
+  to { background-position: -241px; }
+}
+
+/* NEW CODE/CHANGED CODE */
+
+@keyframes slideTop {
+  from { transform: translateY(-100%);} 
+  to {transform: translateY(0);}
+}
+
+@keyframes slideLeft {
+  from { transform: translatex(100%);} 
+  to {transform: translateY(0);}
+}
+
+.questioning-wrapper {
+  display:block;
+}
+
+.questioning-card {
+  display: block;
+  border: 2px solid #000;
+  background: #fff;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 220px;
+  text-align: center;
+  font-size: 16px;
+}
+.questioning-answers {
+  display: flex;  
+  justify-content: center;  
+  align-items: center;
+  flex: 1;
+  min-height: 0;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.questioning-button {
+  margin: 2px 4px;
+}
+
+.slideTop {
+  animation: 0.5s ease-in 0s 1 slideTop; 
+}
+
+.slideLeft {
+  animation: 0.5s ease-in 0s 1 slideLeft; 
+}
+
+
+</style> 
+<div class="game-wrapper"><!--Game wrapper -->
+  <div class="game-intro"><!--Game intro -->
+    <div class="curtain-wrapper"><!--end curtain wrapper-->
+      &nbsp;
+      <div class="curtain curtain-left"></div>
+      <div class="curtain curtain-right"></div>
+    </div><!--end curtain wrapper-->
+    <div class="start-button-wrapper"><!--end start button wrapper-->
+      <a class="button start-button" href="">Start game</a>      
+    </div><!--end start button wrapper-->
+  </div><!--End intro-->
+
+  <div class="questioning-wrapper"><!-- Start questioning -->
+    <div class="questioning-card slideTop">
+      Describe your relationship with your giftee.
+    </div>
+    <div class="questioning-answers"><!--start questioning answer-->
+        <a href="" class="button questioning-button slideLeft">Relative</a>
+        <a href="" class="button questioning-button slideLeft">Friend</a>
+        <a href="" class="button questioning-button slideLeft">Coworker</a>
+        <a href="" class="button questioning-button slideLeft">Client</a>
+        <a href="" class="button questioning-button slideLeft">Employee</a>
+      </div><!--end questioning answer-->
+    <div class="continue-wrapper">
+      <a href="#" id="continueButton" class="button submit slideLeft">Continue</a>
+  </div>
+        
+</div><!-- Start peanut gallert -->
+  <div class="peanut-gallery">
+  <div class="bunny"></div>
+    <div class="speech-bubble-wrap">
+      <div class="speech-bubble">Our favorite robot is back!</div>
+    </div><!-- end speech bubble -->
+  <div class="gg slideLeft"></div>
+</div><!-- End peanut gallery --> 
+<!-- Start results-->
+<div class="counter-wrapper"><!--Start counter -->
+  <div class="counter-card"><!--Card 1-->
+    <div class="counter-title">Round</div>
+    <div class="counter star">X</div>
+  </div><!--End card 1-->
+   <div class="counter-card"><!--Card 2-->
+    <div class="counter-title">Round</div>
+    <div class="counter star">★</div>
+  </div><!--End card 2-->
+   <div class="counter-card"><!--Card 3-->
+    <div class="counter-title">Round</div>
+    <div class="counter star">★</div>
+  </div><!--End card 3-->
+</div><!-- End counter -->
+
+<div class="card-list-wrapper"><!-- The card list -->
+<!-- The cards -->
+<div class="card"><!-- Card 1 -->
+  <div class="product-image"><img src="https://m.media-amazon.com/images/I/51LVZM3MZBL._AC_SX679_.jpg"></div>
+  <div class="product-name-wrapper">
+      <div class="product-title">Anker PowerCore Fustion</div>
+      <span class="product-tile-price">$50</span>
+      <span class="product-buy-button">Best buy</span>
+  </div>
+  <div class="vote-wrapper">
+    <div class="vote yes"></div>
+    <div class="vote no"></div>
+  </div>
+</div><!-- End card 1 -->
+<div class="card"><!-- Card 2 -->
+  <div class="product-image"><img src="https://pyxis.nymag.com/v1/imgs/42d/4c4/bc4deec651b95e9a60a40717f02a3c1c33.2x.rsquare.w600.jpg"></div>
+  <div class="product-name">
+      <div class="product-title">Youtube Premium</div>
+      <span class="product-tile-price">$14</span>
+      <span class="product-buy-button">Google</span>
+  </div>
+  <div class="vote-wrapper">
+    <div class="vote yes"></div>
+    <div class="vote no"></div>
+  </div>
+</div><!-- End card 2 -->
+<div class="card"><!-- Card 3 -->
+  <div class="product-image"><img src="https://pyxis.nymag.com/v1/imgs/d15/498/366aca273898c81898c0480b402ce620e2-11-year-gift-guide-2.2x.rsquare.w600.jpg"></div>
+  <div class="product-name">
+      <div class="product-title">Xbox Series X</div>
+      <span class="product-tile-price">$490</span>
+      <span class="product-buy-button">Walmart</span>
+  </div>
+  <div class="vote-wrapper">
+    <div class="vote yes"></div>
+    <div class="vote no"></div>
+  </div>
+</div><!-- End card 3 -->
+
+  <div class="cta-wrapper"><!--Start cta wrapper-->
+    <div>
+      <a href="" class="button submit">Submit</a>
+    </div>
+  </div><!-- End CTA wrapper -->
+
+<!--End results-->
+</div><!-- The card list wrapper end --> 
+
+<div class=""><!--Final score start -->
+  <div class="percent-title">100% CORRECT</div>
+  <div class="product-grid">
+    <div class="product-image">
+      <img src="https://m.media-amazon.com/images/I/51LVZM3MZBL._AC_SX679_.jpg">
+      <img src="https://pyxis.nymag.com/v1/imgs/aef/ed7/9b427f36bb1775daa3fd824959c926c892-trex-car.2x.rsquare.w600.jpg">
+      <img src="https://pyxis.nymag.com/v1/imgs/a3f/ad9/d787b594c6069aab6f438210923c5a9c13.2x.rsquare.w600.jpg">      
+    </div>
+  </div>
+</div><!-- End final score -->
+
+</div><!--End of game wrapper -->
+ 
+
+
