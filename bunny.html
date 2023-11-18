@@ -1,0 +1,36 @@
+<style>
+
+.bunny {
+  width: 87px;
+  height: 120px;
+}
+.bunny-talk-cycle {
+  background-image: url("https://raw.githubusercontent.com/ddddarby/giftgame/main/rabbit-talk-cycle-sheet.png");
+  background-size: 524px 120px;
+  animation: bunny-talk-cycle 1s steps(6) infinite;
+}
+@keyframes bunny-talk-cycle {
+  from {background-position:0px;}
+  to{background-position:-524px;}
+}
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bunny animations</title>
+</head>
+
+<body>
+
+<div class="bunny bunny-talk-cycle"></div>
+
+</body>
+
+</html>
+
+
+
+
+
