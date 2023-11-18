@@ -139,18 +139,14 @@ a:active {
   padding: 2px;
 }
 
-
-
 .bunny {
-  width: 80px;
+  width: 87px;
   height: 120px;
   position: absolute;
   left: 0;
   bottom: 0;
-  background-image: url("https://tinypic.host/images/2023/11/15/bunny-sheeta.png");
-  background-size: 241px 120px;
-  animation: bunny 1s steps(3) infinite;
 }
+
 .gg {
   position: absolute;
   right: 0;
@@ -224,6 +220,12 @@ a:active {
   text-align: center;  
 }
 
+.bunny-talk-cycle {
+  background-image: url("https://raw.githubusercontent.com/ddddarby/giftgame/main/rabbit-talk-cycle-sheet.png");
+  background-size: 524px 120px;
+  animation: bunny-talk-cycle 1s steps(6) infinite;
+}
+
 .results-wrapper {
   display:none;
 }
@@ -243,12 +245,11 @@ a:active {
   to { background-position: -180px; }
 }
 
-@keyframes bunny {
-  from { background-position: 0px; }
-  to { background-position: -241px; }
-}
 
-/* NEW CODE/CHANGED CODE */
+@keyframes bunny-talk-cycle {
+  from {background-position:0px;}
+  to{background-position:-524px;}
+}
 
 @keyframes slideTop {
   from { transform: translateY(-100%);} 
@@ -327,7 +328,7 @@ a:active {
         
 </div><!-- Start peanut gallert -->
   <div class="peanut-gallery">
-  <div class="bunny"></div>
+  <div class="bunny bunny-talk-cycle "></div>
     <div class="speech-bubble-wrap">
       <div class="speech-bubble">Our favorite robot is back!</div>
     </div><!-- end speech bubble -->
