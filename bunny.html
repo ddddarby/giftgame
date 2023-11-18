@@ -1,0 +1,73 @@
+<style>
+
+.bunny {
+  width: 87px;
+  height: 120px;
+  background-size: 524px 120px;
+}
+.gg {
+	width: 60px;
+	height: 60px;
+	background-size: 180px 60px;
+}
+.bunny-talk-cycle {
+  background-image: url("https://raw.githubusercontent.com/ddddarby/giftgame/main/rabbit-talk-cycle-sheet.png");
+  animation: bunny-animate 1s steps(6) infinite;
+}
+.bunny-side-talk-cycle {
+  background-image: url("https://raw.githubusercontent.com/ddddarby/giftgame/main/rabbit-side-talk-cycle-sheet.png");
+  animation: bunny-animate 1s steps(6) infinite;
+}
+.gg-neutral {
+	background-image: url("https://raw.githubusercontent.com/ddddarby/giftgame/main/gg-neutral.png");
+	animation: gg-animate 1s steps(3) infinite;	
+}
+.gg-laugh {
+	background-image: url("https://raw.githubusercontent.com/ddddarby/giftgame/main/gg-laugh.png");
+	animation: gg-animate 1s steps(3) infinite;	
+}
+.gg-surprise {
+	background-image: url("https://raw.githubusercontent.com/ddddarby/giftgame/main/gg-surprise.png");
+	animation: gg-animate 1s steps(3) infinite;	
+}
+.gg-mad {
+	background-image: url("https://raw.githubusercontent.com/ddddarby/giftgame/main/gg-mad.png");
+	animation: gg-animate 1s steps(3) infinite;	
+}
+.gg-sour {
+	background-image: url("https://raw.githubusercontent.com/ddddarby/giftgame/main/gg-sour.png");
+	animation: gg-animate 1s steps(3) infinite;	
+}
+@keyframes bunny-animate {
+  from {background-position:0px;}
+  to{background-position:-524px;}
+}
+@keyframes gg-animate {
+  from {background-position:0px;}
+  to{background-position:-180px;}
+}
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>animations</title>
+</head>
+
+<body>
+<div class="bunny bunny-talk-cycle"></div>
+<div class="bunny bunny-side-talk-cycle"></div>
+<div class="gg gg-neutral"></div>
+<div class="gg gg-laugh"></div>
+<div class="gg gg-surprise"></div>
+<div class="gg gg-mad"></div>
+<div class="gg gg-sour"></div>
+</body>
+
+</html>
+
+
+
+
+
