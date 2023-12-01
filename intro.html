@@ -1,0 +1,319 @@
+<style type="text/css">
+	
+@font-face {
+font-family: 'Vulf Mono';
+src: url('https://github.com/ddddarby/giftgame/vulf-web/VulfMono-Black.woff2') format('woff2'),
+url('https://github.com/ddddarby/giftgame/vulf-web/VulfMono-Black.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Mono';
+    src: url('VulfMono-BlackItalic.woff2') format('woff2'),
+        url('VulfMono-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+body {
+	font-family: Vulf Mono;
+	font-weight: 100;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-style: italic;
+	font-weight: 900;
+}
+h5 {
+	font-weight: 100;
+	font-style: normal;
+}
+a, p {
+	font-family: Vulf Mono;
+	font-size: 12px;
+	font-weight: 100;
+}
+.intro-card {
+	text-align: center;
+	max-width: 400px;
+	background: #fff;
+	margin: 40px auto;
+}
+
+.button {
+	border: 1px solid black;
+  border-radius: 4px;
+  text-align:center;
+  display: inline-block;
+  padding: 8px 8px;
+  background: #fff;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
+}
+.button:hover {
+	background: #000;
+	color: #fff;
+}
+.peanut-gallery {
+  width: 300px;
+  height: 150px;
+  margin: 20px auto;
+  display: block;
+  position: relative;
+  bottom: 0;
+}
+.bunny {
+  width: 87px;
+  height: 120px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.bunny-talk-cycle {
+  background-image: url("https://raw.githubusercontent.com/ddddarby/giftgame/main/rabbit-talk-cycle-sheet.png");
+  background-size: 524px 120px;
+  animation: bunny-talk-cycle 1s steps(6) infinite;
+}
+.gg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 60px;
+  height: 60px;
+  background-image: url("https://tinypic.host/images/2023/11/15/gg-sprite-sheeta8f42e97071b40b4.png");
+  background-repeat: no-repeat;
+  background-size: 180px 60px;
+  animation: gg 1s steps(3) infinite;
+  margin-top: 62px;
+}
+@keyframes gg {
+  from { background-position: 0px; }
+  to { background-position: -180px; }
+}
+@keyframes bunny-talk-cycle {
+  from {background-position:0px;}
+  to{background-position:-524px;}
+}
+.progress-container {
+  max-width: 60em;
+  margin: 0 auto;
+}
+
+.progress-segment {
+  display: flex;
+}
+
+.progress-item {
+  width: 100%;
+  background-color: #fff;
+  height: 8px;
+  border-left: 1px solid #000000;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+.progress-item:last-child {
+  border-right: 1px solid #000000;
+}
+
+.progress-item.black {
+  background: #000000 !important;
+}
+
+.questioning-card {
+  display: block;
+  border: 1px solid #000;
+  background: #fff;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 220px;
+  text-align: center;
+}
+.questioning-wrapper > * {
+	display: flex;
+	justify-content: center;  
+  align-items: center;
+  flex: 1;
+}
+.questioning-answers > * {
+	margin: 2px;
+	font-weight: 100;
+}
+.questioning-answers {
+	margin: 10px auto;
+}
+.questioning-button {
+  justify-content: center;  
+  align-items: center;
+  flex: 1;
+  min-height: 0;
+  flex-wrap: wrap;
+  margin: 2px;
+  font-size: 16px;
+}
+
+.submit {
+	background: #000;
+	color: #fff;
+}
+.submit:hover {
+	background: #fff;
+	color: #000;
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+}
+.loader {
+  margin: 60px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: .25em solid rgba(0, 0, 0, 0.8);
+  border-right: .25em solid rgba(0, 0, 0, 0.8);
+  border-bottom: .25em solid rgba(0, 0, 0, 0.8);
+  border-left: .25em solid rgba(0, 0, 0, 0.24);
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.section-message {
+	text-align: center;
+}
+.card {
+  width: 280px;
+  display: flex;
+  border: 1px solid #000000;
+  margin: 10px auto;
+  padding: 10px;
+  background: #ffffff;
+  font-size: 12px;
+}
+.product-title {
+  margin: 0 auto 4px;
+}
+.product-buy-button {
+  background:#F1F1F1;
+  padding: 2px;
+}
+.product-buy-button a, .product-buy-button a:visited  {
+	text-decoration: none;
+	color: #000;
+}
+.product-image {
+  flex: 1;
+  margin: 0 12px 0 0;
+}
+.product-image img {
+  height: auto;
+  width: 90px;
+}
+.product-name {
+    flex: 2;
+}
+
+
+</style>
+<div class="intro-card"><!-- end intro -->
+	<h1>THE GREAT GIFT GAME</h1>
+	<p>Great Gift is a gift recommendation service.
+On average, it takes about 4 minutes to answer the questions.
+
+It is designed to operate without any personal data. This site is built without cookies/tracking pixels.
+</p>
+
+<a href="" class="button submit">START GAME</a>
+
+</div><!-- end intro -->
+
+</div><!-- Start peanut gallert -->
+  <div class="peanut-gallery">
+  <div class="bunny bunny-talk-cycle"></div>
+  <div class="gg"></div>
+</div><!-- End peanut gallery --> 
+
+
+<div class="progress-container">
+  <div class="progress-segment">
+    <div class="progress-item black"></div>
+    <div class="progress-item"></div>
+    <div class="progress-item"></div>
+    <div class="progress-item"></div>
+    <div class="progress-item"></div>
+    <div class="progress-item"></div>
+    <div class="progress-item"></div>
+  </div>
+</div>
+
+<div class="questioning-wrapper"><!-- Start questioning -->
+    <div class="questioning-card">
+      <h5>Describe your relationship with your giftee.</h5>
+    </div>
+    <div class="questioning-answers"><!--start questioning answer-->
+        <a href="" class="button ">Relative</a>
+        <a href="" class="button ">Friend</a>
+        <a href="" class="button ">Coworker</a>
+        <a href="" class="button ">Client</a>
+        <a href="" class="button ">Employee</a>
+      </div><!--end questioning answer-->
+    <div class="continue-wrapper">
+      <a href="#" id="continueButton" class="button submit">CONTINUE</a>
+  </div>
+</div><!-- End questioning -->
+
+<div class="loader"></div>
+
+<div class="section-message">
+	<img style="height:40px;width:32px;" src="https://raw.githubusercontent.com/ddddarby/giftgame/main/sparkle.png">
+	<h5>Section one done! Get ready for section two.</h5>
+</div>
+
+
+<div class="questioning-wrapper"><!-- Start questioning -->
+    <div class="questioning-card">
+      <h5>Here are the recommendations</h5>
+    </div>
+    <div class="card"><!-- Card 3 -->
+  <div class="product-image"><img src="https://pyxis.nymag.com/v1/imgs/d15/498/366aca273898c81898c0480b402ce620e2-11-year-gift-guide-2.2x.rsquare.w600.jpg"></div>
+  <div class="product-name">
+      <div class="product-title">Xbox Series X</div>
+      <span class="product-tile-price">$490</span>
+      <span class="product-buy-button"><a href="">Walmart</a></span>
+  </div>
+  <div class="vote-wrapper">
+    <div class="vote yes"></div>
+    <div class="vote no"></div>
+  </div>
+</div><!-- End card 3 -->
+    <div class="continue-wrapper">
+      <a href="#" id="continueButton" class="button submit">PLAY AGAIN</a>
+  </div>
+</div><!-- End questioning -->
